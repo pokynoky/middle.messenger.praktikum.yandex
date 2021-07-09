@@ -1,6 +1,6 @@
 export const template = () => {
   return `
-    <div class="whole">
+    <div class="wrapper">
       <div class="form_page">
         <form>
           <h3 class="login_form_title">{{ title }}</h3>
