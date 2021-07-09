@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/parcel static/index.html -p 3000",
-    "build": "./node_modules/.bin/parcel build static/index.html"
+    "start": "./node_modules/.bin/parcel static/*.html -p 3000",
+    "build": "./node_modules/.bin/parcel build static/*.html"
   },
   "keywords": [],
   "author": "",
