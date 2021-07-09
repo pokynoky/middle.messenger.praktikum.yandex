@@ -18,11 +18,9 @@ const chatList = ['', '', '']
 
 const template = new Templator(chatsTemplate())
 
-function chats () {
+export function chats () {
   return template.compile({
     chatList: chatList,
     chat: chat()
   })
 }
-
-document.querySelector('#root').innerHTML = chats()

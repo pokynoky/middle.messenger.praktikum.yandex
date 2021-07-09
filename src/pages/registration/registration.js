@@ -34,15 +34,12 @@ const formFields = [
   }
 ]
 
-function registration () {
+export function registration () {
   return formPage({
     title: 'Регистрация',
     formFields,
     submitText: 'Зарегистрироваться',
-    link: '/index.html',
+    link: '/',
     linkText: 'Войти'
   })
 }
-
-document.querySelector('#root').innerHTML = registration()
-
