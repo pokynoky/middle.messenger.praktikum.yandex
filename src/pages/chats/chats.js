@@ -5,8 +5,6 @@ import './chats.less'
 import { chatPreview } from './components/chatPreview'
 import { chat } from './components/chat'
 
-// import searchIcon from '../../../static/searchIcon.svg'
-
 const chatList = ['', '', '']
   .map(() => (chatPreview({
     chat: {
@@ -20,10 +18,11 @@ const chatList = ['', '', '']
 
 const template = new Templator(chatsTemplate())
 
-export function chats () {
+function chats () {
   return template.compile({
-    // iconSearch: searchIcon
     chatList: chatList,
     chat: chat()
   })
 }
+
+document.querySelector('#root').innerHTML = chats()

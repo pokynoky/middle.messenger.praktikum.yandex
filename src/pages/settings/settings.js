@@ -23,7 +23,7 @@ const buttonsGroup = buttonsFooter
 
 const template = new Templator(settingsTemplate())
 
-export function settings () {
+function settings () {
   return template.compile({
     user: {
       name: 'Иван'
@@ -36,3 +36,5 @@ export function settings () {
     })
   })
 }
+
+document.querySelector('#root').innerHTML = settings()

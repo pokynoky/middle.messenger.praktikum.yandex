@@ -12,12 +12,14 @@ const formFields = [
   }
 ]
 
-export function authorization () {
+function authorization () {
   return formPage({
     title: 'Вход',
     formFields,
     submitText: 'Авторизоваться',
-    link: '/registration',
+    link: '/registration.html',
     linkText: 'Нет аккаунта?'
   })
 }
+
+document.querySelector('#root').innerHTML = authorization()

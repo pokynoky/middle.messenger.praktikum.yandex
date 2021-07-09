@@ -19,7 +19,7 @@ export const template = () => {
       </div>
 
       <div class="settings_sidebar">
-        <a href="/" class="back_arrow">
+        <a href="/chat" class="back_arrow">
           <
         </a>
       </div>

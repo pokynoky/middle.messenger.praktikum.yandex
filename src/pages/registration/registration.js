@@ -34,7 +34,7 @@ const formFields = [
   }
 ]
 
-export function registration () {
+function registration () {
   return formPage({
     title: 'Регистрация',
     formFields,
@@ -43,3 +43,6 @@ export function registration () {
     linkText: 'Войти'
   })
 }
+
+document.querySelector('#root').innerHTML = registration()
+

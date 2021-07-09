@@ -4,7 +4,7 @@ export const template = () => {
       <div class="chat_list">
         <div class="chat_list_header">
           <div class="link_container">
-            <a href="/settings" class="link">Профиль ></a>
+            <a href="reg.html" class="link">Профиль ></a>
           </div>
           <div class="input_search">
             <input
