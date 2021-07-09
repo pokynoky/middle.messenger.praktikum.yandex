@@ -39,7 +39,7 @@ function registration () {
     title: 'Регистрация',
     formFields,
     submitText: 'Зарегистрироваться',
-    link: '/',
+    link: '/index.html',
     linkText: 'Войти'
   })
 }
