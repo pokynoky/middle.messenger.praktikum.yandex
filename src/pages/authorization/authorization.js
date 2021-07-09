@@ -1,10 +1,23 @@
-import { Templator } from '../../utils/templator'
-import { template as authorizationTemplate } from './authorization.tmpl'
-import './authorization.less'
+import { formPage } from '../../components/formPage'
 
-const template = new Templator(authorizationTemplate())
+const formFields = [
+  {
+    name: 'Логин',
+    value: 'ivanivanov'
+  },
+  {
+    name: 'Пароль',
+    typeInput: 'password',
+    value: 'пароль'
+  }
+]
 
 export function authorization () {
-  return template.compile({
+  return formPage({
+    title: 'Вход',
+    formFields,
+    submitText: 'Авторизоваться',
+    link: '/registration',
+    linkText: 'Нет аккаунта?'
   })
 }

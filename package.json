@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "./node_modules/.bin/parcel static/index.html -p 3000",
+    "start": "./node_modules/.bin/parcel static/index.html -p 3000",
     "build": "./node_modules/.bin/parcel build static/index.html"
   },
   "keywords": [],
