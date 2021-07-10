@@ -2,11 +2,11 @@ import { Templator } from '../../utils/templator'
 import { template as chatsTemplate } from './chats.tmpl'
 import './chats.less'
 
-import { chatPreview } from './components/chatPreview'
-import { chat } from './components/chat'
+import { ChatPreview } from './components/chatPreview'
+import { Chat } from './components/chat'
 
 const chatList = ['', '', '']
-  .map(() => (chatPreview({
+  .map(() => (ChatPreview({
     chat: {
       title: 'lorem ipsum',
       date: '15:32',
@@ -21,6 +21,6 @@ const template = new Templator(chatsTemplate())
 export function chats () {
   return template.compile({
     chatList: chatList,
-    chat: chat()
+    chat: Chat()
   })
 }

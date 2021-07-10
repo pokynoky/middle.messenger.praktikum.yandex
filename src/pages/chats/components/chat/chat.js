@@ -4,6 +4,6 @@ import './chat.less'
 
 const template = new Templator(chatTemplator())
 
-export function chat (ctx) {
+export function Chat (ctx) {
   return template.compile(ctx)
 }

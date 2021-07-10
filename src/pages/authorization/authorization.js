@@ -1,4 +1,4 @@
-import { formPage } from '../../components/formPage'
+import { FormPage } from '../../components/formPage'
 
 const formFields = [
   {
@@ -13,7 +13,7 @@ const formFields = [
 ]
 
 export function authorization () {
-  return formPage({
+  return FormPage({
     title: 'Вход',
     formFields,
     submitText: 'Авторизоваться',

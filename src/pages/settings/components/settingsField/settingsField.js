@@ -4,7 +4,7 @@ import './settingsField.less'
 
 const template = new Templator(settingsFieldTemplate())
 
-export function settingsField (ctx) {
+export function SettingsField (ctx) {
   return template.compile({
     ...ctx,
     value: ctx.value || ''

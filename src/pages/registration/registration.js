@@ -1,4 +1,4 @@
-import { formPage } from '../../components/formPage'
+import { FormPage } from '../../components/formPage'
 
 const formFields = [
   {
@@ -35,7 +35,7 @@ const formFields = [
 ]
 
 export function registration () {
-  return formPage({
+  return FormPage({
     title: 'Регистрация',
     formFields,
     submitText: 'Зарегистрироваться',

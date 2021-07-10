@@ -1,12 +1,12 @@
 import { Templator } from '../../utils/templator'
 import { template as formPageTemplate } from './formPage.tmpl'
 import './formPage.less'
-import { button } from '../button'
-import { formField } from './components/formField'
+import { Button } from '../button'
+import { FormField } from './components/formField'
 
 const template = new Templator(formPageTemplate())
 
-export function formPage ({
+export function FormPage ({
   title,
   formFields,
   submitText,
@@ -14,18 +14,18 @@ export function formPage ({
   linkText
 }) {
   const fields = formFields
-    .map(item => formField(item))
+    .map(item => FormField(item))
     .join('')
 
   return template.compile({
     title,
     formFields: fields,
-    submitButton: button({
+    submitButton: Button({
       type: 'primary',
       children: submitText
     }),
     link,
-    linkButton: button({
+    linkButton: Button({
       type: 'link',
       children: linkText
     })

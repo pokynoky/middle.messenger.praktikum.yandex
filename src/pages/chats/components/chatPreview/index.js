@@ -1,1 +1,1 @@
-export { chatPreview } from './chatPreview'
+export { ChatPreview } from './chatPreview'

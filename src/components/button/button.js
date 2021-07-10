@@ -4,7 +4,7 @@ import './button.less'
 
 const template = new Templator(buttonTemplate())
 
-export function button ({
+export function Button ({
   type,
   children = '',
   danger

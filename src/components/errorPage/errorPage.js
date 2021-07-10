@@ -1,14 +1,14 @@
 import { Templator } from '../../utils/templator'
 import { template as errorPageTemplate } from './errorPage.tmpl'
 import './errorPage.less'
-import { button } from '../button'
+import { Button } from '../button'
 
 const template = new Templator(errorPageTemplate())
 
-export function errorPage (ctx) {
+export function ErrorPage (ctx) {
   return template.compile({
     ...ctx,
-    button: button({
+    button: Button({
       children: 'Назад к чатам',
       type: 'link'
     })

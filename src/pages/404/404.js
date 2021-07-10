@@ -1,7 +1,7 @@
-import { errorPage } from '../../components/errorPage'
+import { ErrorPage } from '../../components/errorPage'
 
 export function error404 () {
-  return errorPage({
+  return ErrorPage({
     title: '404',
     subtitle: 'Не туда попали'
   })

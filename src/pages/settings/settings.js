@@ -1,8 +1,8 @@
 import { Templator } from '../../utils/templator'
 import { template as settingsTemplate } from './settings.tmpl'
 import './settings.less'
-import { settingsField } from './components/settingsField'
-import { button } from '../../components/button'
+import { SettingsField } from './components/settingsField'
+import { Button } from '../../components/button'
 
 import {
   fieldsSettings,
@@ -10,13 +10,13 @@ import {
 } from './const'
 
 const fields = fieldsSettings
-  .map(item => settingsField(item))
+  .map(item => SettingsField(item))
   .join('')
 
 const buttonsGroup = buttonsFooter
   .map(item => {
-    return settingsField({
-      name: button(item)
+    return SettingsField({
+      name: Button(item)
     })
   })
   .join('')
@@ -30,7 +30,7 @@ export function settings () {
     },
     fields,
     buttonsGroup,
-    saveButton: button({
+    saveButton: Button({
       children: 'Сохранить',
       type: 'primary'
     })

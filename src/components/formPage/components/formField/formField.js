@@ -5,7 +5,7 @@ import { get } from '../../../../utils/get'
 
 const template = new Templator(formFieldTemplate())
 
-export function formField (ctx) {
+export function FormField (ctx) {
   return template.compile({
     ...ctx,
     typeInput: get(ctx, 'typeInput', 'text')

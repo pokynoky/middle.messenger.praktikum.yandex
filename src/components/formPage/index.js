@@ -1,1 +1,1 @@
-export { formPage } from './formPage'
+export { FormPage } from './formPage'

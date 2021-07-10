@@ -1,1 +1,1 @@
-export { settingsField } from './settingsField'
+export { SettingsField } from './settingsField'

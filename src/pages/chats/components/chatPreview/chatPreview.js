@@ -4,6 +4,6 @@ import './chatPreview.less'
 
 const template = new Templator(chatPreviewTemplator())
 
-export function chatPreview (ctx) {
+export function ChatPreview (ctx) {
   return template.compile(ctx)
 }
