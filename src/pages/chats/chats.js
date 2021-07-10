@@ -16,7 +16,7 @@ const chatList = ['', '', '']
   })))
   .join('')
 
-const template = new Templator(chatsTemplate())
+const template = new Templator(chatsTemplate)
 
 export function chats () {
   return template.compile({

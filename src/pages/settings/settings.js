@@ -21,7 +21,7 @@ const buttonsGroup = buttonsFooter
   })
   .join('')
 
-const template = new Templator(settingsTemplate())
+const template = new Templator(settingsTemplate)
 
 export function settings () {
   return template.compile({

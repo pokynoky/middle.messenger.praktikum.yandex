@@ -1,10 +1,8 @@
-export const template = () => {
-  return `
-    <button
-      type="button"
-      class="button button_{{ type }} button_{{ danger }}"
-    >
-      {{ children }}
-    </button>
-  `
-}
+export const template = `
+  <button
+    type="button"
+    class="button button_{{ type }} {{ danger }}"
+  >
+    {{ children }}
+  </button>
+`

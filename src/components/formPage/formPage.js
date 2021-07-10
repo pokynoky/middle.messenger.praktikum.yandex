@@ -4,7 +4,7 @@ import './formPage.less'
 import { Button } from '../button'
 import { FormField } from './components/formField'
 
-const template = new Templator(formPageTemplate())
+const template = new Templator(formPageTemplate)
 
 export function FormPage ({
   title,

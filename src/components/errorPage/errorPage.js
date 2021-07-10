@@ -3,7 +3,7 @@ import { template as errorPageTemplate } from './errorPage.tmpl'
 import './errorPage.less'
 import { Button } from '../button'
 
-const template = new Templator(errorPageTemplate())
+const template = new Templator(errorPageTemplate)
 
 export function ErrorPage (ctx) {
   return template.compile({

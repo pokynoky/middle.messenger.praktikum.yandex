@@ -2,7 +2,7 @@ import { Templator } from '../../../../utils/templator'
 import { template as chatTemplator } from './chat.tmpl'
 import './chat.less'
 
-const template = new Templator(chatTemplator())
+const template = new Templator(chatTemplator)
 
 export function Chat (ctx) {
   return template.compile(ctx)
