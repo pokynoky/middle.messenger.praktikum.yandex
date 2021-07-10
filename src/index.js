@@ -20,7 +20,7 @@ const routes = [
     component: chats
   },
   {
-    path: '/error500',
+    path: '/500',
     component: error500
   },
   {
@@ -29,9 +29,8 @@ const routes = [
   },
 ]
 
-console.log('document.location.pathname', window.location.pathname)
 const rout = routes.find(item => (
-  item.path === document.location.pathname
+  item.path === window.location.pathname
 ))
 
 const root = document.querySelector('#root')
