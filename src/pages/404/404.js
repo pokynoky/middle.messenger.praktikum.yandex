@@ -1,4 +1,4 @@
-import { errorPage } from "../../components/errorPage"
+import { errorPage } from '../../components/errorPage'
 
 export function error404 () {
   return errorPage({
