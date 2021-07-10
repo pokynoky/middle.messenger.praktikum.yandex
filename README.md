@@ -5,6 +5,8 @@
 
 деплой проекта: https://boring-clarke-bc1b63.netlify.app/
 
+pull request: https://github.com/pokynoky/middle.messenger.praktikum.yandex/pull/1
+
 команда для запуска:
 
 npm run start
