@@ -29,11 +29,11 @@ const routes = [
   },
 ]
 
-const rout = routes.find(item => (
+const route = routes.find(item => (
   item.path === window.location.pathname
 ))
 
 const root = document.querySelector('#root')
-root.innerHTML = rout
-  ? rout.component()
+root.innerHTML = route
+  ? route.component()
   : error404()
