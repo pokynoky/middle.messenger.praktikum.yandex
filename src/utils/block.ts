@@ -15,8 +15,8 @@ enum EVENTS {
 export abstract class Block {
 
   private _element: HTMLElement = null;
-  private _eventBus: Function
 
+  readonly _eventBus: Function
   readonly _meta: Meta = null;
 
   public props: object
@@ -68,7 +68,7 @@ export abstract class Block {
   }
 
   componentDidUpdate(oldProps?: object, newProps?: object): boolean {
-    return oldProps !== newProps
+    return true
   }
 
   setProps = (nextProps: object): void => {
@@ -99,7 +99,7 @@ export abstract class Block {
   _makePropsProxy(props: object): object  {
     const proxyProps = new Proxy(props, {
       deleteProperty() {
-        throw new Error('нет доступа')
+        throw new Error('Нет доступа')
       }
     })
 
