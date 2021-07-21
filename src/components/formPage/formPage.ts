@@ -6,13 +6,27 @@ import { FormField } from './components/formField'
 
 const template = new Templator(formPageTemplate)
 
+type Fields = {
+  name: string
+  value: string
+  typeInput?: string
+}
+
+type Form = {
+  title: string
+  formFields: Fields[]
+  submitText: string
+  link: string
+  linkText: string
+}
+
 export function FormPage ({
   title,
   formFields,
   submitText,
   link,
   linkText
-}) {
+}: Form) {
   const fields = formFields
     .map(item => FormField(item))
     .join('')

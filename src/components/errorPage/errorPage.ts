@@ -5,7 +5,12 @@ import { Button } from '../button'
 
 const template = new Templator(errorPageTemplate)
 
-export function ErrorPage (ctx) {
+type Context = {
+  title: string
+  subtitle: string
+}
+
+export function ErrorPage (ctx: Context) {
   return template.compile({
     ...ctx,
     button: Button({

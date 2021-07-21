@@ -4,6 +4,17 @@ import './chatPreview.less'
 
 const template = new Templator(chatPreviewTemplator)
 
-export function ChatPreview (ctx) {
+type Chat = {
+  title: string
+  date: string
+  lastMessage?: string
+  countMessages?: number
+}
+
+type Context = {
+  chat: Chat
+}
+
+export function ChatPreview (ctx: Context) {
   return template.compile(ctx)
 }

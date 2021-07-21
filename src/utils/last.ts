@@ -1,4 +1,4 @@
-export function last(list) {
+export function last(list: unknown): unknown {
   if (Array.isArray(list)) {
     const len = list.length
     return len
