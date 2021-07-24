@@ -35,7 +35,7 @@ const formFields = [
 ]
 
 export function registration () {
-  return FormPage({
+  return new FormPage({
     title: 'Регистрация',
     formFields,
     submitText: 'Зарегистрироваться',

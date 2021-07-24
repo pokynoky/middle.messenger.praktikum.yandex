@@ -1,8 +1,8 @@
 import { Templator } from '../../../../utils/templator'
 import { template as chatPreviewTemplator } from './chatPreview.tmpl'
 import './chatPreview.less'
-
-const template = new Templator(chatPreviewTemplator)
+import Block from '../../../../utils/block'
+import BlockProps from '../../../../utils/types/blockTypes'
 
 type Chat = {
   title: string
@@ -11,10 +11,18 @@ type Chat = {
   countMessages?: number
 }
 
-type Context = {
+type Context = BlockProps & {
   chat: Chat
 }
 
-export function ChatPreview (ctx: Context) {
-  return template.compile(ctx)
+export class ChatPreview extends Block {
+  constructor(props: Context) {
+    super(props)
+  }
+
+  render() {
+    const template = new Templator(chatPreviewTemplator)
+
+    return template.compile(this.props)
+  }
 }

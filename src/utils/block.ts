@@ -1,4 +1,5 @@
 import { EventBus } from './eventBus'
+import BlockProps from './types/blockTypes'
 
 type Meta = {
   tagName: string,
@@ -12,16 +13,15 @@ enum EVENTS {
   FLOW_RENDER = 'flow:render'
 }
 
-export abstract class Block {
-
+abstract class Block {
   private _element: HTMLElement = null;
 
   readonly _eventBus: Function
   readonly _meta: Meta = null;
 
-  public props: object
+  public props: BlockProps
 
-  constructor(tagName: string = "div", props: object = {}) {
+  constructor(props: BlockProps = {}, tagName: string = 'div') {
     const eventBus = new EventBus();
     this._meta = {
       tagName,
@@ -118,3 +118,5 @@ export abstract class Block {
     this.getContent().style.display = 'none'
   }
 }
+
+export default Block

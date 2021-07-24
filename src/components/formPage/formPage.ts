@@ -3,45 +3,44 @@ import { template as formPageTemplate } from './formPage.tmpl'
 import './formPage.less'
 import { Button } from '../button'
 import { FormField } from './components/formField'
+import Block from '../../utils/block'
 
-const template = new Templator(formPageTemplate)
+export class FormPage extends Block {
+  constructor(props: object) {
+    super(props)
+  }
 
-type Fields = {
-  name: string
-  value: string
-  typeInput?: string
-}
+  render() {
+    const {
+      title,
+      link,
+      submitText,
+      linkText,
+      formFields
+    } = this.props
 
-type Form = {
-  title: string
-  formFields: Fields[]
-  submitText: string
-  link: string
-  linkText: string
-}
-
-export function FormPage ({
-  title,
-  formFields,
-  submitText,
-  link,
-  linkText
-}: Form) {
-  const fields = formFields
-    .map(item => FormField(item))
-    .join('')
-
-  return template.compile({
-    title,
-    formFields: fields,
-    submitButton: Button({
+    const submitButton = new Button({
       type: 'primary',
       children: submitText
-    }),
-    link,
-    linkButton: Button({
+    }).render()
+
+    const linkButton = new Button({
       type: 'link',
       children: linkText
+    }).render()
+
+    const template = new Templator(formPageTemplate)
+
+    const fields = formFields
+      .map(item => (new FormField(item).render()))
+      .join('')
+
+    return template.compile({
+      title,
+      formFields: fields,
+      submitButton,
+      link,
+      linkButton
     })
-  })
+  }
 }

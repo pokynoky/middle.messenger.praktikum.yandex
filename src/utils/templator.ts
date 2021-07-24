@@ -34,9 +34,9 @@ export class Templator {
         //   continue
         // }
 
-        if (typeof data === 'string') {
-          tmpl = tmpl.replace(new RegExp(key[0], "gi"), data)
-        }
+        tmpl = tmpl.replace(new RegExp(key[0], "gi"), data)
+        // if (typeof data === 'string' || typeof data === 'number') {
+        // }
       }
     }
   

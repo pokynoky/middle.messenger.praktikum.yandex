@@ -3,6 +3,7 @@ import { template as settingsTemplate } from './settings.tmpl'
 import './settings.less'
 import { SettingsField } from './components/settingsField'
 import { Button } from '../../components/button'
+import Block from '../../utils/block'
 
 import {
   fieldsSettings,
@@ -10,29 +11,37 @@ import {
 } from './const'
 
 const fields = fieldsSettings
-  .map(item => SettingsField(item))
+  .map(item => new SettingsField(item).render())
   .join('')
 
 const buttonsGroup = buttonsFooter
-  .map(item => {
-    return SettingsField({
-      name: Button(item)
-    })
-  })
+  .map(() => new SettingsField({
+      name: 'qwe'
+    }).render()
+  )
   .join('')
 
-const template = new Templator(settingsTemplate)
+export class Settings extends Block {
+  constructor() {
+    super()
+  }
 
-export function settings () {
-  return template.compile({
-    user: {
-      name: 'Иван'
-    },
-    fields,
-    buttonsGroup,
-    saveButton: Button({
+  render() {
+    console.log('')
+    const saveButton = new Button({
       children: 'Сохранить',
       type: 'primary'
+    }).render()
+
+    const template = new Templator(settingsTemplate)
+
+    return template.compile({
+      user: {
+        name: 'Иван'
+      },
+      fields,
+      buttonsGroup,
+      saveButton
     })
-  })
+  }
 }

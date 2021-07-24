@@ -1,23 +1,22 @@
 import { Templator } from '../../utils/templator'
+import Block from '../../utils/block'
 import { template as buttonTemplate } from './button.tmpl'
 import './button.less'
+import BlockProps from '../../utils/types/blockTypes'
 
-const template = new Templator(buttonTemplate)
-
-type Button = {
+type ButtonProps = BlockProps & {
   type: string
   children: string
   danger?: boolean
 }
 
-export function Button ({
-  type,
-  children = '',
-  danger
-}: Button): string {
-  return template.compile({
-    type,
-    children,
-    danger: danger ? 'button_danger' : ''
-  })
+export class Button extends Block {
+  constructor(props: ButtonProps) {
+    super(props)
+  }
+
+  render() {
+    const template = new Templator(buttonTemplate)
+    return template.compile(this.props)
+  }
 }

@@ -13,7 +13,7 @@ const formFields = [
 ]
 
 export function authorization () {
-  return FormPage({
+  return new FormPage({
     title: 'Вход',
     formFields,
     submitText: 'Авторизоваться',
